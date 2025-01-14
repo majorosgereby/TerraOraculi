@@ -2,12 +2,14 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY package*.json .
+COPY ./backend/* ./backend
 
-RUN npm i
+RUN npm install ./backend
 
 COPY . .
 
 EXPOSE 8128
+
+WORKDIR /app/backend
 
 CMD ["npm", "start"]

@@ -10,6 +10,9 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "express": "^4.21.2"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "https": "^1.0.0",
+    "morgan": "^1.10.0"
   }
 }

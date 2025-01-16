@@ -3,3 +3,9 @@ variable "ecr_repository_name" {
   type        = string
   default     = "practice/express-example" # Optional default value
 }
+
+variable "aws_region" {
+  description = "The AWS region to deploy resources in."
+  type        = string
+  default     = "eu-west-2" # Optional default value
+}

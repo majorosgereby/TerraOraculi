@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-example-deployment
+  namespace: express-example
+  labels:
+    app: express-example-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: express-example-app
+  template:
+    metadata:
+      labels:
+        app: express-example-app
+    spec:
+      containers:
+      - name: express-example-container
+        image: 
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8128
+      imagePullSecrets:
+      - name: docker-login

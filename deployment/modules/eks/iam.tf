@@ -24,11 +24,3 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.eks_cluster_role.name
 }
-
-output "vpc_id" {
-  value = aws_vpc.eks_vpc.id
-}
-
-output "subnet_ids" {
-  value = aws_subnet.eks_subnet[*].id
-}

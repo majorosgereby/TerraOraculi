@@ -34,3 +34,10 @@ output "eks_subnet_ids" {
   description = "The IDs of the subnets created for the EKS cluster."
   value       = module.eks.subnet_ids
 }
+
+# MISC outputs
+output "region" {
+  description = "The amazon region declared in variables."
+  value       = var.aws_region
+}
+

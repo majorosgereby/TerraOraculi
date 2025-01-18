@@ -14,5 +14,5 @@ module "eks" {
   source             = "./modules/eks"
   aws_region         = var.aws_region
   availability_zones = data.aws_availability_zones.available.names
+  cluster_name       = var.cluster_name
 }
-

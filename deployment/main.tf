@@ -15,4 +15,9 @@ module "eks" {
   aws_region         = var.aws_region
   availability_zones = data.aws_availability_zones.available.names
   cluster_name       = var.cluster_name
+  desired_size       = 3
+  max_size           = 6
+  min_size           = 2
+  instance_types     = ["t2.micro"]
+  disk_size          = 20
 }

@@ -15,3 +15,9 @@ variable "cluster_name" {
   type        = string
   default     = "my-eks-cluster"
 }
+
+variable "image_tag" {
+  description = "The version tag of the docker iamge"
+  type        = string
+  default     = "latest"
+}

@@ -21,3 +21,22 @@ module "eks" {
   instance_types     = ["t2.micro"]
   disk_size          = 20
 }
+
+module "kubernetes" {
+  source = "./modules/kubernetes"
+
+  # Kubernetes cluster details
+  cluster_name     = module.eks.cluster_name
+  cluster_endpoint = module.eks.cluster_endpoint
+
+  # ECR Image details
+  ecr_repository = module.ecr.repository_url
+  image_tag      = var.image_tag
+
+  # Application details
+  namespace      = "default"
+  replica_count  = 2
+  container_port = 8080
+  service_type   = "LoadBalancer"
+
+}

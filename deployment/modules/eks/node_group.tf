@@ -26,6 +26,7 @@ resource "aws_eks_node_group" "eks_node_group" {
 
 # addon for managing eks cluster
 resource "aws_eks_addon" "vpc_cni" {
-  cluster_name = aws_eks_cluster.eks_cluster.name
-  addon_name   = "vpc-cni"
+  cluster_name  = aws_eks_cluster.eks_cluster.name
+  addon_name    = "vpc-cni"
+  addon_version = 1.32
 }

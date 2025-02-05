@@ -1,5 +1,6 @@
 # else
 .else
+the_error.txt
 
 # terraform
 # Local .terraform directories

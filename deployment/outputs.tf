@@ -35,6 +35,22 @@ output "eks_subnet_ids" {
   value       = module.eks.subnet_ids
 }
 
+# Kubernetes outputs
+# output "load_balancer_name" {
+#   description = "The name of the load balancer of the application."
+#   value       = module.kubernetes.load_balancer_name
+# }
+
+output "load_balancer_hostname" {
+  description = "The host name of the load balancer that makes the application visible."
+  value       = module.kubernetes.load_balancer_hostname
+}
+
+output "load_balancer_ip" {
+  description = "The ip address of the load balancer, the entry point of the application."
+  value       = module.kubernetes.load_balancer_ip
+}
+
 # MISC outputs
 output "region" {
   description = "The amazon region declared in variables."

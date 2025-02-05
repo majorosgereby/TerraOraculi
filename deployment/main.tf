@@ -36,7 +36,7 @@ module "kubernetes" {
   # Application details
   namespace      = "default"
   replica_count  = 2
-  container_port = 8080
+  container_port = 8128
   service_type   = "LoadBalancer"
 
 }

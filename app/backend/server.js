@@ -14,19 +14,19 @@ const __dirname = path.dirname(__filename);
 // HTTPS config
 // https://dev.to/fredabod/building-an-express-app-with-an-https-server-2mbj
 // https://chatgpt.com/share/67866246-2df8-8013-b0c4-e08c5c0f8965
-dotenv.config();
+// dotenv.config();
 
 // Create an Express app
 const app = express();
 
 // middlewear for https
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 
 // Read SSL certificate and key files
-const options = {
-    key: fs.readFileSync(path.join(__dirname, "keys", "express-example-key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "keys", "express-example.pem")),
-};
+// const options = {
+//     key: fs.readFileSync(path.join(__dirname, "keys", "express-example-key.pem")),
+//     cert: fs.readFileSync(path.join(__dirname, "keys", "express-example.pem")),
+// };
 
 // ENDPOINTS
 
@@ -42,8 +42,9 @@ app.use('/img', express.static(path.join(__dirname, '..', 'content', 'assets')))
 // Start the server
 const PORT = process.env.PORT || 8128;
 
-const server = https.createServer(options, app);
+// const server = https.createServer(options, app);
 
-server.listen(PORT, () => {
+// server.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -37,6 +37,6 @@ module "kubernetes" {
   namespace      = "default"
   replica_count  = 2
   container_port = 8128
-  service_type   = "LoadBalancer"
+  service_type   = "ClusterIP"
 
 }

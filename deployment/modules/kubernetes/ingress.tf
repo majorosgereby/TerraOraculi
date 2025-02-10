@@ -12,7 +12,8 @@ resource "kubernetes_ingress_v1" "app_ingress" {
           path = "/*"
           backend {
             service {
-              name = kubernetes_service_v1.app_service.metadata.0.name
+              # name = kubernetes_service_v1.app_service.metadata.0.name
+              name = "my-app-service"
               port {
                 number = 80
               }

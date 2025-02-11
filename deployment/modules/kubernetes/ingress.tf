@@ -9,11 +9,10 @@ resource "kubernetes_ingress_v1" "app_ingress" {
     rule {
       http {
         path {
-          path = "/*"
+          path = "/"
           backend {
             service {
-              # name = kubernetes_service_v1.app_service.metadata.0.name
-              name = "my-app-service"
+              name = kubernetes_service_v1.app_service.metadata.0.name
               port {
                 number = 80
               }

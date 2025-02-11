@@ -2,6 +2,9 @@ resource "kubernetes_service_v1" "app_service" {
   metadata {
     name      = "my-app-service"
     namespace = kubernetes_namespace_v1.app_namespace.metadata[0].name
+    labels = {
+      app = "my-app"
+    }
   }
 
   spec {

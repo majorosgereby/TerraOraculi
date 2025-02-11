@@ -24,7 +24,24 @@ terraform init
 terraform apply
 ```
 
-The application is accessible through the link provided in the outputs.
+The configuration will provide the following outputs:
+
+```
+ecr_repository_url = "<<ECR URI>>"
+eks_cluster_arn = "<<AWS CLUSTER ARN>>"
+eks_cluster_endpoint = "<<CLUSSTER API ENDPOINT>>"
+eks_cluster_name = "<<CLUSTER NAME>>"
+eks_cluster_security_group_id = "<<AWS SECURITY GROUP ID OF CLUSTER>>"
+eks_subnet_ids = [
+  "<<SUBNET 1 ID>>",
+  "<<SUBNET 2 ID>>",
+]
+eks_vpc_id = "<<VPC ID>>"
+load_balancer_hostname = "<<LOAD BALANCER HOST NAME>>"
+region = "<<AWS REGION CODE>>"
+```
+
+The application is accessible through the link provided in the outputs `load_balancer_hostname = "<<LOAD BALANCER HOST NAME>>"`.
 
 All resources could be deleted with terraform.
 

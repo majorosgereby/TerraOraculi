@@ -1,6 +1,7 @@
 # else
 .else
 the_error.txt
+deployment/create_docs.sh
 
 # terraform
 # Local .terraform directories

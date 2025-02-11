@@ -2,6 +2,10 @@
 
 A complete terraform solution to overview the deployment of an application from pushing a docker image to ECR, provisioning the cluster in EKS and deploying the application with kubernetes. 
 
+## Costs notice
+
+**Running an EKS cluster costs around $0.10 per hour, and instances cost around the same, make sure to be prepared before running the script! Refer to [Amazon pricing](https://aws.amazon.com/eks/pricing/)!**
+
 ## Usage
 
 A `terraform.tfvars` needs to be created in the the deployment folder. The 3 neccesery variables are: `aws_region`, `ecr_repository_name` and `cluster_name`.
@@ -14,7 +18,12 @@ ecr_repository_name = "practice/express-example"
 cluster_name        = "my-eks-cluster"
 ```
 
-The repository defaults to the image found in the `app` folder.
+By default, the repository will use the image that can be built from the `app` folder as an example. Other existing docker images could be supported by giving their name and version tag in `terrafrm.tfvars`.
+
+```tfvars
+image_name          = "express-example"
+image_version_tag   = "latest"
+```
 
 After setting the variables, navigate to deployment and initialize & apply the terraform configuration.
 
@@ -42,6 +51,8 @@ region = "<<AWS REGION CODE>>"
 ```
 
 The application is accessible through the link provided in the outputs `load_balancer_hostname = "<<LOAD BALANCER HOST NAME>>"`.
+
+## Deletion
 
 All resources could be deleted with terraform.
 

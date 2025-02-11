@@ -15,7 +15,7 @@ variable "ecr_repository" {
   type        = string
 }
 
-variable "image_tag" {
+variable "image_version_tag" {
   description = "Docker image tag to deploy"
   type        = string
   default     = "latest"

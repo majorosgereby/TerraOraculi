@@ -1,8 +1,7 @@
 resource "kubernetes_deployment_v1" "app" {
 
   metadata {
-    name = "my-app"
-    # namespace = var.namespace
+    name      = "my-app"
     namespace = kubernetes_namespace_v1.app_namespace.metadata[0].name
   }
 
@@ -25,7 +24,7 @@ resource "kubernetes_deployment_v1" "app" {
       spec {
         container {
           name  = "my-app"
-          image = "${var.ecr_repository}:${var.image_tag}"
+          image = "${var.ecr_repository}:${var.image_version_tag}"
 
           port {
             container_port = var.container_port

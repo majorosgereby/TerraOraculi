@@ -6,6 +6,8 @@ module "ecr" {
   source              = "./modules/ecr"
   aws_region          = var.aws_region
   ecr_repository_name = var.ecr_repository_name
+  image_name          = var.image_name
+  image_version_tag   = var.image_version_tag
 }
 
 data "aws_availability_zones" "available" {}
@@ -30,8 +32,8 @@ module "kubernetes" {
   cluster_endpoint = module.eks.cluster_endpoint
 
   # ECR Image details
-  ecr_repository = module.ecr.repository_url
-  image_tag      = var.image_tag
+  ecr_repository    = module.ecr.repository_url
+  image_version_tag = var.image_version_tag
 
   # Application details
   namespace      = "default"

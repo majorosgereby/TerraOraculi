@@ -36,7 +36,7 @@ module "kubernetes" {
   image_version_tag = var.image_version_tag
 
   # Application details
-  namespace      = "default"
+  namespace      = var.application_namespace
   replica_count  = 2
   container_port = 8128
   service_type   = "ClusterIP"

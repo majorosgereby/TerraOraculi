@@ -8,14 +8,15 @@ A complete terraform solution to overview the deployment of an application from 
 
 ## Usage
 
-A `terraform.tfvars` needs to be created in the the deployment folder. The 3 neccesery variables are: `aws_region`, `ecr_repository_name` and `cluster_name`.
+A `terraform.tfvars` needs to be created in the the deployment folder. The 4 neccesery variables are: `aws_region`, `ecr_repository_name`, `cluster_name` and `application_namespace`.
 
 Example:
 
 ```tfvars
-aws_region          = "eu-west-2"
-ecr_repository_name = "practice/express-example"
-cluster_name        = "my-eks-cluster"
+aws_region            = "eu-west-2"
+ecr_repository_name   = "practice/express-example"
+cluster_name          = "my-eks-cluster"
+application_namespace = "my-app-namespace"
 ```
 
 By default, the repository will use the image that can be built from the `app` folder as an example. Other existing docker images could be supported by giving their name and version tag in `terrafrm.tfvars`.

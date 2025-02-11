@@ -27,3 +27,8 @@ variable "image_version_tag" {
   type        = string
   default     = "latest"
 }
+
+variable "application_namespace" {
+  description = "The name of the namespace where the application runs in the cluster."
+  type        = string
+}

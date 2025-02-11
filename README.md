@@ -60,3 +60,12 @@ All resources could be deleted with terraform.
 terraform destroy
 ```
 
+## Documentation
+
+Each modul an main has a DOCS.md file where you can find more about the variables, versions, outputs etc.
+
+Also you can access them here:
+- [The main DOCS](DOCS.md)
+- [The ECR module DOCS](modules/ecr/DOCS.md)
+- [The EKS module DOCS](modules/eks/DOCS.md)
+- [The KUBERNETES module DOCS](modules/kubernetes/DOCS.md)

@@ -46,10 +46,10 @@ output "load_balancer_hostname" {
   value       = module.kubernetes.load_balancer_hostname
 }
 
-output "load_balancer_ip" {
-  description = "The ip address of the load balancer, the entry point of the application."
-  value       = module.kubernetes.load_balancer_ip
-}
+# output "load_balancer_ip" {
+#   description = "The ip address of the load balancer, the entry point of the application."
+#   value       = module.kubernetes.load_balancer_ip
+# }
 
 # MISC outputs
 output "region" {

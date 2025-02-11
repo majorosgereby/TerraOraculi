@@ -13,6 +13,17 @@ output "cluster_arn" {
   value       = aws_eks_cluster.eks_cluster.arn
 }
 
+output "cluster_ca_certificate" {
+  description = "The certificate for authenticating the kubernetes cluster."
+  value       = aws_eks_cluster.eks_cluster.certificate_authority[0].data
+}
+
+# output "cluster_token" {
+#   description = "The authentication token for the cluster."
+#   value       = data.aws_eks_cluster_auth.cluster.token
+#   sensitive   = true
+# }
+
 output "cluster_security_group_id" {
   description = "The security group ID associated with the EKS cluster."
   value       = aws_eks_cluster.eks_cluster.vpc_config[0].cluster_security_group_id

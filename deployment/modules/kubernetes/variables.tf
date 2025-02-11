@@ -1,7 +1,22 @@
 variable "cluster_name" {
   description = "EKS cluster name"
   type        = string
-  default     = "my-eks-cluster"
+}
+
+variable "cluster_endpoint" {
+  description = "The endpoint to the cluster"
+  type        = string
+}
+
+variable "cluster_ca_certificate" {
+  description = "The certificate for authenticating the cluster in the module."
+  type        = string
+}
+
+variable "cluster_token" {
+  description = "The token for authenticating the cluster in the module."
+  type        = string
+  sensitive   = true
 }
 
 variable "namespace" {
@@ -15,7 +30,7 @@ variable "ecr_repository" {
   type        = string
 }
 
-variable "image_tag" {
+variable "image_version_tag" {
   description = "Docker image tag to deploy"
   type        = string
   default     = "latest"
@@ -37,9 +52,4 @@ variable "container_port" {
   description = "Container port to expose"
   type        = number
   default     = 8080
-}
-
-variable "cluster_endpoint" {
-  description = "The endpoint to the cluster"
-  type        = string
 }

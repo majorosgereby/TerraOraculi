@@ -66,7 +66,7 @@ terraform destroy
 Each modul and main has a DOCS.md file where you can find more about the variables, versions, outputs etc.
 
 Also you can access them here:
-- [The main DOCS](DOCS.md)
+- [The main DOCS](deployment/DOCS.md)
 - [The ECR module DOCS](deployment/modules/ecr/DOCS.md)
 - [The EKS module DOCS](deployment/modules/eks/DOCS.md)
 - [The KUBERNETES module DOCS](deployment/modules/kubernetes/DOCS.md)
